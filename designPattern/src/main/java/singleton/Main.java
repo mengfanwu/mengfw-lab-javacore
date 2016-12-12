@@ -7,16 +7,16 @@ import java.lang.reflect.Constructor;
  */
 public class Main {
     public static void main(String[] args) throws IllegalAccessException, InstantiationException {
-        SingletonClassA singletonClassA = SingletonClassA.getInstance();
-        SingletonClassA singletonClassA1 = SingletonClassA.getInstance();
-        System.out.println(singletonClassA == singletonClassA1);
+        SingletonA singletonA = SingletonA.getInstance();
+        SingletonA singletonA1 = SingletonA.getInstance();
+        System.out.println(singletonA == singletonA1);
 
         try {
-            Class<SingletonClassA> singletonClassAClass = SingletonClassA.class;
-            Constructor<SingletonClassA> declaredConstructor = singletonClassAClass.getDeclaredConstructor(null);
+            Class<SingletonA> singletonClassAClass = SingletonA.class;
+            Constructor<SingletonA> declaredConstructor = singletonClassAClass.getDeclaredConstructor(null);
             declaredConstructor.setAccessible(true);
-            SingletonClassA singletonClassA2 = declaredConstructor.newInstance();
-            System.out.println(singletonClassA == singletonClassA2);
+            SingletonA singletonA2 = declaredConstructor.newInstance();
+            System.out.println(singletonA == singletonA2);
         } catch (Exception e) {
             e.printStackTrace();
         }

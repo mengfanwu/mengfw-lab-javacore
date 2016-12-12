@@ -5,10 +5,10 @@ package singleton;
  * 类加载时即创建好对象
  * Created by MFW on 2016/12/10.
  */
-public class SingletonClassA {
+public class SingletonA {
     private static boolean flag = false;
-    private static final SingletonClassA instance = new SingletonClassA();
-    private SingletonClassA() {
+    private static final SingletonA instance = new SingletonA();
+    private SingletonA() {
         //防止单例模式被反射攻击
         if(!flag){
             flag = !flag;
@@ -17,7 +17,7 @@ public class SingletonClassA {
         }
 
     }
-    public static SingletonClassA getInstance(){
+    public static SingletonA getInstance(){
         return instance;
     }
 
